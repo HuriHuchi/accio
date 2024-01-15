@@ -2,16 +2,16 @@ import fs from 'fs'
 import path from 'path'
 import { exec } from 'child_process'
 import chalk from 'chalk'
-import { REPO_PATH } from './constants.js'
+import { REPO_PATH } from './constants'
 
 export const log = console.log
 
-export function isDirExist(dirPath) {
-  return fs.existsSync(dirPath)
+export function isDirExist(path: string) {
+  return fs.existsSync(path)
 }
 
-export function openVsCode(projectPath) {
-  exec(`code ${projectPath}`, (error, stdout, stderr) => {
+export function openVsCode(path: string) {
+  exec(`code ${path}`, (error, stdout, stderr) => {
     if (error) {
       console.error(chalk.red(`Error opening VSCode: ${error.message}`))
       return
@@ -26,6 +26,6 @@ export function openVsCode(projectPath) {
   })
 }
 
-export function getProjectPath(key) {
+export function getProjectPath(key: string) {
   return path.join(REPO_PATH, `${key}-playground`)
 }
