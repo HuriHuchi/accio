@@ -1,14 +1,12 @@
 import { spawn } from 'child_process'
-import path from 'path'
-import { REPO_PATH } from '../lib/constants.js'
-import { isDirExist, openVsCode } from '../lib/utils.js'
+import { getProjectPath, isDirExist, openVsCode } from '../lib/utils.js'
 import chalk from 'chalk'
 import { log } from 'console'
 
 const KEY = 'react'
 
 async function reactHandler() {
-  const projectPath = path.join(REPO_PATH, `${KEY}-playgroud`)
+  const projectPath = getProjectPath(KEY)
 
   if (isDirExist(projectPath)) {
     openVsCode(projectPath)
