@@ -1,9 +1,7 @@
 import { program } from '@commander-js/extra-typings'
-import reactHandler from './handlers/react.js'
-import javascriptHandler from './handlers/javascript.js'
+import reactHandler from './handlers/react'
+import javascriptHandler from './handlers/javascript'
 
-// todo - 파일 확장자 없애기
-// ts-node 사용하기?
 program
   .name('accio-playground')
   .description('Build and load your code playground easily and quickly by just one command')

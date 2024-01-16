@@ -3,13 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "private": "true",
-  "exports": "./index.js",
-  "engines": {
-    "node": ">=16"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",

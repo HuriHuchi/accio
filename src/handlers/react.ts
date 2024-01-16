@@ -1,6 +1,5 @@
 import { spawn } from 'child_process'
-import { getProjectPath, isDirExist, openVsCode } from '../lib/utils.js'
-import chalk from 'chalk'
+import { getProjectPath, isDirExist, openVsCode } from '../lib/utils'
 import { log } from 'console'
 
 const KEY = 'react'
@@ -20,7 +19,7 @@ async function reactHandler() {
 
   app.on('close', (code) => {
     if (code === 0) {
-      log(chalk.green('React project created successfully'))
+      log('React project created successfully')
       openVsCode(projectPath)
     } else {
       log('🟥 Error')

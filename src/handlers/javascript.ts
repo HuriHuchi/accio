@@ -1,7 +1,6 @@
-import * as path from 'path'
+import path from 'path'
 import { getProjectPath, isDirExist, log, openVsCode } from '../lib/utils.js'
 import { exec } from 'child_process'
-import chalk from 'chalk'
 
 const KEY = 'js'
 
@@ -16,11 +15,11 @@ async function javascriptHandler() {
 
   exec(`sh ${scriptPath}`, (e, stdout, stderr) => {
     if (e || stderr) {
-      log(chalk.red('Error occured'))
+      log('Error occured')
       return
     }
 
-    log(chalk.green('Javascript project created successfully'))
+    log('Javascript project created successfully')
   })
 }
 
