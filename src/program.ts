@@ -1,5 +1,9 @@
 import { Command } from '@commander-js/extra-typings'
 import { js, react } from './handlers'
+import figlet from 'figlet'
+import { log } from './lib/utils'
+
+log(figlet.textSync('Accio Playground'))
 
 export const program = new Command()
 
