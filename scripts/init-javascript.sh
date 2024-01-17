@@ -1,8 +1,16 @@
 #!/bin/bash
 
 project_name="js-playground"
+repos_dir=".repos"
 
-cd .repos
+# Check if '.repos' directory exists
+if [ ! -d "$repos_dir" ]; then
+    # If not, create it
+    mkdir "$repos_dir"
+fi
+
+# Move to the '.repos' directory
+cd "$repos_dir" || exit 1
 
 # js-playground 폴더 생성
 mkdir -p "$project_name"

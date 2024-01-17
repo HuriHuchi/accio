@@ -1,15 +1,18 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
+  "display": "Node LTS",
+  "_version": "20.1.0",
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "dist",
+    "lib": [
+      "es2023"
+    ],
+    "module": "node16",
+    "target": "es2022",
+    "strict": true,
     "esModuleInterop": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-  },
-  "include": [
-    "src/**/*.ts",
-    "test/**/*.ts"
-  ],
-  "ts-node": {"esm": true}
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node16",
+    "rootDir": ".",
+    "outDir": "dist"
+  }
 }
