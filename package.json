@@ -2,9 +2,13 @@
   "name": "accio",
   "version": "1.0.0",
   "description": "",
+  "main": "dist/src/index.js",
+  "bin": {
+    "accio": "./dist/src/index.js"
+  },
   "scripts": {
     "watch": "tsc -w",
-    "dev": ""
+    "build": "npx tsc"
   },
   "author": "",
   "license": "ISC",

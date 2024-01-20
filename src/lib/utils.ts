@@ -1,7 +1,8 @@
-import * as fs from 'fs'
-import * as path from 'path'
+import fs from 'fs'
+import path from 'path'
 import { exec } from 'child_process'
 import { REPO_PATH } from './constants'
+import chalk from 'chalk'
 
 export const log = console.log
 
@@ -21,7 +22,7 @@ export function openVsCode(path: string) {
       return
     }
 
-    log('VSCode opened successfully.')
+    log(chalk.green('VSCode opened successfully.'))
   })
 }
 
