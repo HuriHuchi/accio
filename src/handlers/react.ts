@@ -14,7 +14,7 @@ async function reactHandler() {
 
   const app = spawn('npx', ['create-react-app', projectPath])
   app.stdout.on('data', (data) => {
-    console.log(data.toString())
+    log(data.toString())
   })
 
   app.on('close', (code) => {

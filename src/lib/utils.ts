@@ -29,3 +29,17 @@ export function openVsCode(path: string) {
 export function getProjectPath(key: string) {
   return path.join(REPO_PATH, `${key}-playground`)
 }
+
+export function hasRepo() {
+  return isDirExist('.accio') || isDirExist('.accio/repos')
+}
+
+export function createRepo() {
+  if (!isDirExist('.accio')) {
+    fs.mkdirSync('.accio')
+  }
+
+  if (!isDirExist('.accio/repos')) {
+    fs.mkdirSync('.accio/repos')
+  }
+}

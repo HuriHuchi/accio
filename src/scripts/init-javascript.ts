@@ -1,15 +1,12 @@
 import fs from 'fs'
 import path from 'path'
+import { createRepo, hasRepo } from '../lib/utils'
 
 const projectName = 'js-playground'
 
 export async function initJavascript() {
-  if (!fs.existsSync('.accio')) {
-    fs.mkdirSync('.accio')
-  }
-
-  if (!fs.existsSync('.accio/repos')) {
-    fs.mkdirSync('.accio/repos')
+  if (!hasRepo()) {
+    createRepo()
   }
 
   process.chdir('.accio/repos')
