@@ -10,8 +10,16 @@
     "watch": "tsc -w",
     "build": "npx tsc"
   },
-  "author": "",
+  "keywords": [
+    "cli",
+    "playground",
+    "javascript",
+    "react"
+  ],
+  "author": "HuriHuchi",
   "license": "ISC",
+  "repository": "https://github.com/HuriHuchi/accio-playground",
+  "homepage": "https://github.com/HuriHuchi/accio-playground#readme",
   "dependencies": {
     "@commander-js/extra-typings": "^11.1.0",
     "chalk": "4.1.2",
