@@ -1,5 +1,5 @@
 {
-  "name": "accio-playground",
+  "name": "@hurihuchi/accio",
   "version": "1.0.0",
   "description": "",
   "main": "dist/src/index.js",
@@ -18,8 +18,8 @@
   ],
   "author": "HuriHuchi",
   "license": "ISC",
-  "repository": "https://github.com/HuriHuchi/accio-playground",
-  "homepage": "https://github.com/HuriHuchi/accio-playground#readme",
+  "repository": "https://github.com/HuriHuchi/accio",
+  "homepage": "https://github.com/HuriHuchi/accio#readme",
   "dependencies": {
     "@commander-js/extra-typings": "^11.1.0",
     "chalk": "4.1.2",
