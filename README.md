@@ -1,3 +1,3 @@
-## Accio Plagyround
+## Accio
 
-Accio Playground is CLI tool for building local playground.
+Accio is CLI tool for building local playground.
