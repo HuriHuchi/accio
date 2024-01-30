@@ -6,6 +6,9 @@
   "bin": {
     "accio": "./dist/src/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "watch": "tsc -w",
     "build": "npx tsc"
