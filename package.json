@@ -2,9 +2,9 @@
   "name": "@hurihuchi/accio",
   "version": "1.0.4",
   "description": "",
-  "main": "dist/src/index.js",
+  "main": "dist/bundle.js",
   "bin": {
-    "accio": "./dist/src/index.js"
+    "accio": "./dist/bundle.js"
   },
   "files": [
     "dist"
