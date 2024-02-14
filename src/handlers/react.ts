@@ -1,25 +1,43 @@
 import { spawn } from 'child_process'
-import { getProjectPath, isDirExist, openVsCode } from '../lib/utils'
+import { createRepo, getProjectPath, hasRepo, isDirExist, openVsCode } from '../lib/utils'
 import { log } from 'console'
+import { REPO_PATH } from '../lib/constants'
 
-const dir = getProjectPath('react')
+const PLAYGROUND_PATH = getProjectPath('react')
+const PLAYGROUND_NAME = 'react-playground'
+const command = 'yarn'
+const args = ['create', 'vite', PLAYGROUND_NAME, '--template', 'react-ts']
+const options = { cwd: REPO_PATH }
+
 export class ReactHandler {
   constructor() {}
 
   async run() {
-    if (isDirExist(dir)) {
-      openVsCode(dir)
+    // if dir exist
+    if (isDirExist(PLAYGROUND_PATH)) {
+      openVsCode(PLAYGROUND_PATH)
       return
     }
-    const app = spawn('npx', ['create-react-app', dir])
+
+    // if not,
+    if (!hasRepo()) {
+      createRepo()
+    }
+
+    const app = spawn(command, args, options)
+
     app.stdout.on('data', (data) => {
       log(data.toString())
+    })
+
+    app.stderr.on('data', (data) => {
+      console.error(`stderr: ${data}`)
     })
 
     app.on('close', (code) => {
       if (code === 0) {
         log('React project created successfully')
-        openVsCode(dir)
+        openVsCode(PLAYGROUND_PATH)
       } else {
         log('🟥 Error')
       }

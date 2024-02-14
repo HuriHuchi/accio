@@ -1,6 +1,6 @@
 import { Command } from '@commander-js/extra-typings'
-import jsCommand from './commands/javascript'
-import reactCommand from './commands/react'
+import js from './commands/javascript'
+import react from './commands/react'
 import { version } from '../package.json'
 
 export const program = new Command()
@@ -11,5 +11,5 @@ program
   .version(version)
 
 // commands
-jsCommand()
-reactCommand()
+js()
+react()

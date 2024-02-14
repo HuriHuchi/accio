@@ -2,15 +2,13 @@ import { getProjectPath, isDirExist, openVsCode } from '../lib/utils'
 import { initJavascript } from '../scripts/init-javascript'
 import fs from 'fs'
 
-const dir = getProjectPath('js')
+const PLAYGROUND_PATH = getProjectPath('js')
 export class JavascriptHandler {
   constructor() {}
   reset() {
-    if (fs.existsSync(dir)) {
-      fs.rm(dir, { recursive: true }, (err) => {
-        if (err) {
-          console.error(err)
-        }
+    if (isDirExist(PLAYGROUND_PATH)) {
+      fs.rm(PLAYGROUND_PATH, { recursive: true }, (err) => {
+        if (err) console.error(err)
       })
     }
 
@@ -18,14 +16,14 @@ export class JavascriptHandler {
   }
 
   async run() {
-    if (isDirExist(dir)) {
-      openVsCode(dir)
+    if (isDirExist(PLAYGROUND_PATH)) {
+      openVsCode(PLAYGROUND_PATH)
       return
     }
 
     try {
       await initJavascript()
-      openVsCode(dir)
+      openVsCode(PLAYGROUND_PATH)
     } catch (e) {
       console.error(e)
     }
