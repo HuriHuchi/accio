@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { exec } from 'child_process'
+import { exec, execSync } from 'child_process'
 import { REPO_PATH } from './constants'
 import chalk from 'chalk'
 
@@ -10,15 +10,21 @@ export function isDirExist(path: string) {
   return fs.existsSync(path)
 }
 
+function openFinder(path: string) {
+  execSync(`open ${path}`)
+}
+
 export function openVsCode(path: string) {
   exec(`code ${path}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error opening VSCode: ${error.message}`)
+      openFinder(path)
       return
     }
 
     if (stderr) {
       console.error(`Error opening VSCode: ${stderr}`)
+      openFinder(path)
       return
     }
 
