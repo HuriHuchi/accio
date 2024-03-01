@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "watch": "tsc -w",
-    "build": "./node_modules/.bin/esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=node --packages=external"
+    "build": "./node_modules/.bin/esbuild src/index.ts --bundle --outfile=dist/bundle.js --platform=node --packages=external",
+    "prepare": "npm version patch"
   },
   "keywords": [
     "cli",
